@@ -1,0 +1,9 @@
+_build/
+deps/
+*.beam
+*.ezs
+*.ez
+.mix
+.elixir_ls/
+.env
+.DS_Store
