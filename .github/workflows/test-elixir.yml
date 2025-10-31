@@ -1,0 +1,53 @@
+name: Elixir Tests
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'tests/elixir/**'
+      - '.github/workflows/test-elixir.yml'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - 'tests/elixir/**'
+      - '.github/workflows/test-elixir.yml'
+
+jobs:
+  test:
+    name: Elixir Tests
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        elixir: ['1.14', '1.15', '1.16']
+        otp: ['25', '26', '27']
+        exclude:
+          - elixir: '1.14'
+            otp: '27'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Elixir
+        uses: erlef/setup-elixir@v1
+        with:
+          elixir-version: ${{ matrix.elixir }}
+          otp-version: ${{ matrix.otp }}
+          cache-key: elixir-${{ hashFiles('**/mix.lock') }}
+
+      - name: Install dependencies (tests/elixir)
+        working-directory: tests/elixir
+        run: mix deps.get
+
+      - name: Check formatting
+        working-directory: tests/elixir
+        run: mix format --check-formatted
+
+      - name: Run tests
+        working-directory: tests/elixir
+        run: mix test --warnings-as-errors
+
+      - name: Generate coverage report
+        working-directory: tests/elixir
+        run: mix test --cover
+        continue-on-error: true
