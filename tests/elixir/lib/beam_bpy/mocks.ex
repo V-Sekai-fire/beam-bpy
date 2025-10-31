@@ -4,8 +4,7 @@ defmodule BeamBpy.Mocks do
   Allows mocking the handler behavior for isolated unit testing
   """
 
-  # Define the behaviour that handlers should conform to
-  defmock BeamBpyHandlerMock, for: BeamBpy.Handlers
+  import Mox
 
   @doc """
   Setup mocks for a test

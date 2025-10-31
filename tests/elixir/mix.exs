@@ -21,8 +21,7 @@ defmodule BeamBpy.MixProject do
 
   defp deps do
     [
-      {:mox, "~> 1.2.0", only: :test},
-      {:ex_unit, "~> 1.14", only: :test}
+      {:mox, "~> 1.2.0", only: :test}
     ]
   end
 
