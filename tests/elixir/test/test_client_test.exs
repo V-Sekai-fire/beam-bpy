@@ -10,7 +10,7 @@ Code.require_file("test_helpers.exs", __DIR__)
 defmodule BeamBpyTest do
   @moduledoc """
   Infrastructure/Setup Tests - Level 1 of Dependency Hierarchy
-  
+
   Tests node initialization, connection, and availability.
   These are prerequisites for all higher-level tests.
   """

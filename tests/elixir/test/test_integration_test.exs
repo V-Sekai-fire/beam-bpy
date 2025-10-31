@@ -5,7 +5,7 @@ Code.require_file("test_helpers.exs", __DIR__)
 defmodule BeamBpyIntegrationTest do
   @moduledoc """
   Integration Tests organized by Dependency Hierarchy
-  
+
   Level 1: Infrastructure/Setup (setup_all, setup)
   Level 2: Core Handler Tests
   Level 3: Advanced Handler Tests  

@@ -7,7 +7,7 @@ Provides common utilities following dependency hierarchy
 defmodule BeamBpyTestHelpers do
   @moduledoc """
   Shared helper functions for beam-bpy tests organized by dependency hierarchy.
-  
+
   Hierarchy Levels:
   1. Infrastructure - Node setup and connection management
   2. Core Handlers - Basic handler testing (ping, echo, add)

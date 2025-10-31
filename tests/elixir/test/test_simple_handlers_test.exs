@@ -10,7 +10,7 @@ Code.require_file("test_helpers.exs", __DIR__)
 defmodule BeamBpySimpleTest do
   @moduledoc """
   Simple handler tests organized by dependency hierarchy:
-  
+
   Level 2: Core Handler Tests - Basic functionality
   Level 3: Advanced Handler Tests - Complex handlers
   Level 4: Error Handling & Edge Cases
